@@ -18,10 +18,10 @@
         }
     });
 
-    async function get(key) {
+    function get(key) {
         const SSC = JSON.parse(localStorage.getItem('storageShareCenter')) || {};
         const value = SSC[key];
-        await connection.promise.then(parent => {
+        connection.promise.then(parent => {
             parent.get(key, value)
         })
     }
