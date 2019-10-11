@@ -21,8 +21,8 @@
     function get(key) {
         const SSC = JSON.parse(localStorage.getItem('storageShareCenter')) || {};
         const value = SSC[key];
-        connection.promise.then(parent => {
-            parent.get(key, value)
+        return connection.promise.then(parent => {
+            return parent.get(key, value)
         })
     }
 
